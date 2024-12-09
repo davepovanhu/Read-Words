@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Words</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <img id="logo" src="Logo2.png" alt="Logo" />
+        <h2>Reading Words</h2>
+
+        <!-- Attempt Button -->
+        <button id="attemptButton" onmouseover="showTooltip()" onmouseout="hideTooltip()" onclick="startAttempt()">Attempt</button>
+
+        <!-- Stopwatch -->
+        <div id="stopwatch">Time: 00:00</div>
+
+        <!-- Audio Card -->
+        <div class="audio-card" onclick="playSound()">
+            <img src="audio-icon.png" alt="Audio Icon">
+            <p id="audio-word">Word</p>
+        </div>
+
+        <!-- Word Cards -->
+        <div class="word-cards">
+            <div class="word-card" id="card-1" onclick="checkWord(0)">Word 1</div>
+            <div class="word-card" id="card-2" onclick="checkWord(1)">Word 2</div>
+            <div class="word-card" id="card-3" onclick="checkWord(2)">Word 3</div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden">
+            <h2 id="resultMessage"></h2>
+            <button id="playAgain" onclick="restartGame()">Attempt Again</button>
+            <a href="http://127.0.0.1:5502/index.html" id="back">Back</a>
+        </div>
+    </main>
+
+    <!-- Tooltip Container -->
+    <div id="tooltip" class="hidden"></div>
+
+    <footer>
+        Designed For Namibian Correctional Service
+    </footer>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
